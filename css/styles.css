@@ -14,7 +14,7 @@ Variables
 :root {
   --clr-primary: #678e3e;
   --clr-primary-light: #beed8c;
-  --clr-grey-1: #383838;
+  --clr-grey-1: #404040;
   --clr-grey-5: #686868;
   --clr-grey-10: #e0e0e0;
   --clr-white: #fff;
@@ -91,7 +91,6 @@ p {
   }
 }
 /* more global css */
-
 .btn {
   text-transform: uppercase;
   background: var(--clr-primary);
@@ -116,6 +115,25 @@ p {
   clear: both;
   display: table;
   /* prevents content from wrapping "clearfix hack"*/
+}
+.section-title h3 {
+  font-family: var(--ff-secondary);
+  color: var(--clr-primary);
+}
+.section-title {
+  margin-bottom: 2rem;
+}
+.section-center {
+  padding: 4rem 0;
+  width: 85vw;
+  margin: 0 auto;
+  max-width: 1170px; /* makes all section centers same width */
+}
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+    padding: 4rem 1rem;
+  }
 }
 /* 
 ===================
@@ -207,5 +225,42 @@ Skills
     .skill {
       width: 25%;
     }
+  }
+}
+/* 
+===================
+About
+===================
+*/
+.about-img,
+.about-info {
+  padding: 2rem 0;
+}
+.about-picture-container {
+  background: var(--clr-primary);
+  border: 0.5rem solid var(--clr-primary);
+  max-width: 30rem;
+  /* extra stuff */
+  overflow: hidden; /* keeps image from exceeding container */
+}
+.about-picture {
+  transition: var(--transition);
+}
+.about-picture-container:hover .about-picture {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+.about-text {
+  max-width: 26rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 992px) {
+  .about-img,
+  .about-info {
+    float: left; /* already have clearfix in global */
+    width: 50%;
+  }
+  .about-info {
+    padding-left: 2rem;
   }
 }
